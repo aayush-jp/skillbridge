@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type BadgeVariant = "blue" | "green" | "orange" | "muted";
+type BadgeVariant = "blue" | "green" | "orange" | "red" | "muted";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: BadgeVariant;
@@ -10,6 +10,7 @@ const variantClasses: Record<BadgeVariant, string> = {
   blue:   "bg-blue-50 text-blue",
   green:  "bg-green-50 text-green",
   orange: "bg-orange-50 text-orange",
+  red:    "bg-red-50 text-red",
   muted:  "bg-line text-muted",
 };
 

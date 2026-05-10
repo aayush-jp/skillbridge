@@ -21,7 +21,7 @@ type Phase = "loading" | "quiz" | "results" | "error";
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const TOTAL_SECONDS = 20 * 60;
-const PASS_THRESHOLD = 0.7;
+const PASS_THRESHOLD = 0.6;
 const OPTION_LABELS = ["A", "B", "C", "D"] as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -346,10 +346,10 @@ function ResultsScreen({
 
             <div className="flex items-center justify-center gap-3 mb-4">
               <Badge
-                variant={passed ? "green" : "orange"}
+                variant={passed ? "green" : "red"}
                 className="text-sm px-3 py-1"
               >
-                {passed ? "Passed" : "Needs Practice"}
+                {passed ? "Pass" : "Fail"}
               </Badge>
               <span className="text-sm text-muted">{pct}%</span>
             </div>
@@ -429,7 +429,7 @@ function ResultsScreen({
             <Button
               variant="blue"
               size="lg"
-              onClick={() => router.push("/dashboard")}
+              onClick={() => router.push("/learning-path")}
             >
               View Learning Path →
             </Button>

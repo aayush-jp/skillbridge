@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
   const normalizedLevel = level ?? "intermediate";
 
   const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+    model: "gemini-2.5-flash",
     systemInstruction:
       "You are a technical assessment expert. " +
       "Generate exactly 10 multiple-choice questions as a valid JSON array. " +
