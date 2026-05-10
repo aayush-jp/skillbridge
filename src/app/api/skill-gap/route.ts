@@ -59,6 +59,7 @@ export async function POST(request: NextRequest) {
       resumeText: resume.raw_text ?? "",
       targetRole: targetRole.role,
       domain: targetRole.domain,
+      userId: user.id,
     });
   } catch (err) {
     return NextResponse.json(

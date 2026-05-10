@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import useSWR from "swr";
 import toast from "react-hot-toast";
 import { createClient } from "@/lib/supabase/client";
@@ -100,6 +101,13 @@ function typeVariant(
   if (t === "project") return "green";
   if (t === "practice") return "orange";
   return "muted";
+}
+
+function toSlug(skill: string): string {
+  return skill
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 }
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -303,9 +311,14 @@ function ModuleCard({
             </h3>
             <div className="flex flex-wrap gap-2">
               {module.skills.map((skill, i) => (
-                <Badge key={i} variant="muted">
-                  {skill}
-                </Badge>
+                <Link key={i} href={`/assessment/${toSlug(skill)}`}>
+                  <Badge
+                    variant="muted"
+                    className="cursor-pointer hover:bg-blue-50 hover:text-blue transition-colors"
+                  >
+                    {skill}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>

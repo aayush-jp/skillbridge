@@ -68,6 +68,7 @@ export async function POST(request: NextRequest) {
       missingSkills: (report.skills_missing ?? []) as MissingSkill[],
       targetRole: targetRole.role,
       timelineWeeks: 12,
+      userId: user.id,
     });
   } catch (err) {
     return NextResponse.json(
