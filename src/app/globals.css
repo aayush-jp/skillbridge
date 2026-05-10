@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+/* ── Design tokens (spec-exact names) ───────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f6f8fc;
+  --paper: #ffffff;
+  --ink: #0b1530;
+  --ink-2: #344063;
+  --muted: #6b7691;
+  --line: #e6ecf5;
+  --line-2: #d6deec;
+  --blue: #2456f5;
+  --blue-600: #1c46d4;
+  --blue-50: #eef3ff;
+  --blue-100: #dbe5ff;
+  --green: #1f8a5b;
+  --green-50: #e9f6ee;
+  --orange: #d97706;
+  --orange-50: #fff4e3;
+  --red: #d23f3f;
+  --red-50: #fdecec;
+  --shadow-sm: 0 1px 0 rgba(11, 21, 48, 0.04), 0 1px 2px rgba(11, 21, 48, 0.04);
+  --shadow-md: 0 1px 0 rgba(11, 21, 48, 0.04),
+    0 8px 24px -12px rgba(11, 21, 48, 0.18);
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
 }
 
+/* ── Tailwind theme — dynamic refs (colors, fonts) ───────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-blue: var(--blue);
+  --color-blue-600: var(--blue-600);
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-green: var(--green);
+  --color-green-50: var(--green-50);
+  --color-orange: var(--orange);
+  --color-orange-50: var(--orange-50);
+  --color-red: var(--red);
+  --color-red-50: var(--red-50);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Tailwind theme — static values (shadows, radii) ────────────────── */
+@theme {
+  --shadow-sm: 0 1px 0 rgba(11, 21, 48, 0.04), 0 1px 2px rgba(11, 21, 48, 0.04);
+  --shadow-md: 0 1px 0 rgba(11, 21, 48, 0.04),
+    0 8px 24px -12px rgba(11, 21, 48, 0.18);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
 }
 
+/* ── Base ────────────────────────────────────────────────────────────── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

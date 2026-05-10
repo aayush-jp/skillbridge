@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "src/app/api/parse-resume/route.ts": { "maxDuration": 60 },
+    "src/app/api/skill-gap/route.ts": { "maxDuration": 60 },
+    "src/app/api/learning-path/route.ts": { "maxDuration": 60 },
+    "src/app/api/assessment/generate/route.ts": { "maxDuration": 60 }
+  }
+}
